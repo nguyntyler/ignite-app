@@ -20,7 +20,7 @@ export default function Home() {
 
 	return (
 		<GameList>
-			<h1>Upcoming Games</h1>
+			<h2>Upcoming Games</h2>
 			<Games>
 				{/* Now we map all the games using the Games.js component */}
 				{upcoming.map((game) => (
