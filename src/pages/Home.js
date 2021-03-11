@@ -33,6 +33,32 @@ export default function Home() {
 					/>
 				))}
 			</Games>
+			<h2>Upcoming Games</h2>
+			<Games>
+				{/* Now we map all the games using the Games.js component */}
+				{upcoming.map((game) => (
+					<Game
+						name={game.name}
+						released={game.released}
+						id={game.id}
+						image={game.background_image}
+						key={game.id}
+					/>
+				))}
+			</Games>
+			<h2>Upcoming Games</h2>
+			<Games>
+				{/* Now we map all the games using the Games.js component */}
+				{upcoming.map((game) => (
+					<Game
+						name={game.name}
+						released={game.released}
+						id={game.id}
+						image={game.background_image}
+						key={game.id}
+					/>
+				))}
+			</Games>
 		</GameList>
 	);
 }
