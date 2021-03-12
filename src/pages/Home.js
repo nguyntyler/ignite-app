@@ -33,10 +33,10 @@ export default function Home() {
 					/>
 				))}
 			</Games>
-			<h2>Upcoming Games</h2>
+			<h2>Popular Games</h2>
 			<Games>
 				{/* Now we map all the games using the Games.js component */}
-				{upcoming.map((game) => (
+				{popular.map((game) => (
 					<Game
 						name={game.name}
 						released={game.released}
@@ -46,10 +46,10 @@ export default function Home() {
 					/>
 				))}
 			</Games>
-			<h2>Upcoming Games</h2>
+			<h2>New Games</h2>
 			<Games>
 				{/* Now we map all the games using the Games.js component */}
-				{upcoming.map((game) => (
+				{newGames.map((game) => (
 					<Game
 						name={game.name}
 						released={game.released}
