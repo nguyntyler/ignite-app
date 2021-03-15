@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import GameDetail from "../components/GameDetails";
 //  Redux
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gamesAction";
@@ -20,43 +21,26 @@ export default function Home() {
 
 	return (
 		<GameList>
+			{/* <GameDetail screenshots={}></GameDetail> */}
 			<h2>Upcoming Games</h2>
 			<Games>
 				{/* Now we map all the games using the Games.js component */}
 				{upcoming.map((game) => (
-					<Game
-						name={game.name}
-						released={game.released}
-						id={game.id}
-						image={game.background_image}
-						key={game.id}
-					/>
+					<Game game={game} id={game.id} />
 				))}
 			</Games>
 			<h2>Popular Games</h2>
 			<Games>
 				{/* Now we map all the games using the Games.js component */}
 				{popular.map((game) => (
-					<Game
-						name={game.name}
-						released={game.released}
-						id={game.id}
-						image={game.background_image}
-						key={game.id}
-					/>
+					<Game game={game} id={game.id} />
 				))}
 			</Games>
 			<h2>New Games</h2>
 			<Games>
 				{/* Now we map all the games using the Games.js component */}
 				{newGames.map((game) => (
-					<Game
-						name={game.name}
-						released={game.released}
-						id={game.id}
-						image={game.background_image}
-						key={game.id}
-					/>
+					<Game game={game} id={game.id} />
 				))}
 			</Games>
 		</GameList>

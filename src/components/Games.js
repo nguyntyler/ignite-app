@@ -2,13 +2,31 @@ import React from "react";
 // Styling and Animations
 import styled from "styled-components";
 import { motion } from "framer-motion";
+//Redux import
+import { useDispatch } from "react-redux";
+import { loadDetail } from "../actions/detailAction";
 
-const Game = ({ name, released, image }) => {
+const Game = ({ game }) => {
+	const {
+		name,
+		released,
+		background_image,
+		clip,
+		id,
+		short_screenshots,
+	} = game;
+	// Load Details
+	const dispatch = useDispatch();
+	const loadDetailHandler = () => {
+		dispatch(loadDetail(id, short_screenshots));
+		// This is the action that gets the url and detail. It gets the id from the individual components and makes another call.
+	};
+	// console.log(screenshots);
 	return (
-		<StyledGame>
+		<StyledGame onClick={loadDetailHandler}>
 			<h3>{name}</h3>
 			<p>{released}</p>
-			<img src={image} alt={name} />
+			<img src={background_image} alt={name} />
 		</StyledGame>
 	);
 };
